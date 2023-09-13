@@ -39,4 +39,10 @@ class Stack:
 
         :return: данные удаленного элемента
         """
-        pass
+        if len(self.stack) > 0:
+            data = self.stack.pop()
+            if len(self.stack) == 0:
+                self.top = None
+            else:
+                self.top = Node(self.stack[-1], self.top)
+            return data

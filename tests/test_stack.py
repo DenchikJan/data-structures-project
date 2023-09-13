@@ -24,3 +24,10 @@ class TestStack:
         assert stack.top.next_node.next_node.data == 2
         assert stack.top.next_node.next_node.next_node is None
 
+    def test_pop(self):
+        stack = Stack()
+        stack.push('data1')
+        stack.push('data2')
+        data = stack.pop()
+        assert stack.top.data == 'data1'
+        assert data == 'data2'
